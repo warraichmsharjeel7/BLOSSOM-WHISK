@@ -1,0 +1,123 @@
+/* Custom CSS Variables for Theme Switcher */
+:root[data-theme="pastel"] {
+  --bg-main: #FFFDF9;
+  --bg-card: #FFFFFF;
+  --bg-accent-light: #FFDFD3;
+  --border-accent: #F7D6D0;
+  --text-main: #5C3D2E;
+  --color-primary: #C85A54;
+  --navbar-bg: rgba(255, 253, 249, 0.88);
+}
+
+:root[data-theme="dark"] {
+  --bg-main: #1A120B;
+  --bg-card: #2B1B17;
+  --bg-accent-light: #3E2723;
+  --border-accent: #5D4037;
+  --text-main: #EFEBE9;
+  --color-primary: #D7827E;
+  --navbar-bg: rgba(26, 18, 11, 0.88);
+}
+
+:root[data-theme="strawberry"] {
+  --bg-main: #FFF0F5;
+  --bg-card: #FFFFFF;
+  --bg-accent-light: #FFCCD5;
+  --border-accent: #FFB3C1;
+  --text-main: #590D22;
+  --color-primary: #FF4D6D;
+  --navbar-bg: rgba(255, 240, 245, 0.88);
+}
+
+:root[data-theme="forest"] {
+  --bg-main: #F4F7F5;
+  --bg-card: #FFFFFF;
+  --bg-accent-light: #D8F3DC;
+  --border-accent: #B7E4C7;
+  --text-main: #1B4332;
+  --color-primary: #2D6A4F;
+  --navbar-bg: rgba(244, 247, 245, 0.88);
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.bg-main { background-color: var(--bg-main); }
+.bg-card-bg { background-color: var(--bg-card); }
+.bg-accent-light { background-color: var(--bg-accent-light); }
+.border-accent { border-color: var(--border-accent); }
+.text-main { color: var(--text-main); }
+.text-primary { color: var(--color-primary); }
+.bg-primary { background-color: var(--color-primary); }
+
+.navbar-blur {
+  background-color: var(--navbar-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Responsive Cards & Animations */
+.cake-card {
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cake-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.cart-drawer-open {
+  transform: translateX(0) !important;
+}
+
+.filter-btn {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-accent);
+  color: var(--text-main);
+}
+
+.filter-btn.active-filter, .filter-btn:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+/* Smooth Fade In Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-accent);
+  border-radius: 10px;
+}

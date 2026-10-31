@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ur" dir="ltr" data-theme="pastel">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blossom & Whisk | Artisanal Bakery</title>
+  <!-- Tailwind CSS & FontAwesome Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-main text-main font-sans min-h-screen flex flex-col transition-colors duration-500 overflow-x-hidden">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-accent-light text-main text-center py-2 px-4 text-[10px] sm:text-xs font-bold tracking-widest uppercase border-b border-accent shadow-sm animate-pulse">
+    ✨ Free Luxury Packaging & Same-Day Fresh Bake Delivery ✨
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="sticky top-0 z-40 navbar-blur border-b border-accent/30 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-2 sm:gap-3 group">
+        <span class="text-2xl sm:text-3xl transform group-hover:rotate-12 transition-transform duration-300">🍰</span>
+        <span class="font-serif text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-main">BLOSSOM & WHISK</span>
+      </a>
+
+      <!-- Navigation Links for Desktop -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold">
+        <a href="#hero" class="hover:text-primary transition-colors">HOME</a>
+        <a href="#catalog" class="hover:text-primary transition-colors">MENU</a>
+        <a href="#custom-studio" class="hover:text-primary transition-colors">CUSTOM STUDIO</a>
+        <a href="#reviews" class="hover:text-primary transition-colors">REVIEWS</a>
+      </nav>
+
+      <!-- Theme Selector & Cart Trigger -->
+      <div class="flex items-center gap-2 sm:gap-4">
+        <!-- Theme Switcher Buttons -->
+        <div class="flex items-center gap-1 sm:gap-1.5 p-1 rounded-full border border-accent bg-card-bg">
+          <button onclick="setTheme('pastel')" title="Rose Pastel" class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#F7D6D0] border border-white hover:scale-110 transition-transform"></button>
+          <button onclick="setTheme('dark')" title="Dark Chocolate" class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#2B1B17] border border-white hover:scale-110 transition-transform"></button>
+          <button onclick="setTheme('strawberry')" title="Berry Pink" class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#FF4D6D] border border-white hover:scale-110 transition-transform"></button>
+          <button onclick="setTheme('forest')" title="Emerald Forest" class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#2D6A4F] border border-white hover:scale-110 transition-transform"></button>
+        </div>
+
+        <!-- Cart Button -->
+        <button id="cart-open-btn" class="relative bg-primary text-white hover:opacity-90 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg transform hover:-translate-y-0.5 transition-all">
+          <i class="fa-solid fa-basket-shopping text-sm"></i>
+          <span class="hidden xs:inline">Cart</span>
+          <span id="cart-badge-count" class="bg-white text-primary text-[11px] w-5 h-5 rounded-full flex items-center justify-center font-bold shadow-inner">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16 md:py-24 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+    <div class="space-y-4 sm:space-y-6 fade-in-up text-center md:text-left">
+      <span class="inline-block bg-accent-light text-main px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest border border-accent">
+        Freshly Baked Daily
+      </span>
+      <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl font-bold leading-tight">
+        Soft Flavors, Warm Memories & Perfect <span class="italic text-primary">Slices.</span>
+      </h1>
+      <p class="opacity-80 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
+        Handcrafted artisanal cakes baked with rich cocoa, fresh farm cream, organic berry fillings, and warm vanilla sponges.
+      </p>
+      <div class="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4 pt-2">
+        <a href="#catalog" class="bg-primary text-white hover:opacity-90 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl font-bold text-xs uppercase tracking-wider shadow-lg transition-transform hover:-translate-y-1">
+          Explore Menu
+        </a>
+        <a href="#custom-studio" class="bg-card-bg border border-accent hover:border-primary px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl font-bold text-xs uppercase tracking-wider shadow-sm transition-transform hover:-translate-y-1">
+          Custom Studio
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero Image Banner -->
+    <div class="relative group mt-4 md:mt-0">
+      <div class="absolute -inset-2 sm:-inset-3 bg-gradient-to-r from-accent to-primary rounded-[30px] sm:rounded-[40px] blur-xl opacity-40 group-hover:opacity-70 transition duration-500"></div>
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=80" 
+           alt="Signature Cake" class="relative rounded-[24px] sm:rounded-[32px] h-[300px] sm:h-[400px] md:h-[450px] w-full object-cover border-4 border-white shadow-2xl transform group-hover:scale-[1.01] transition duration-500">
+    </div>
+  </section>
+
+  <!-- Value Features Bar -->
+  <section class="border-y border-accent/40 bg-accent-light/20 py-8 sm:py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="space-y-1 sm:space-y-2">
+        <div class="text-2xl sm:text-3xl text-primary"><i class="fa-solid fa-seedling"></i></div>
+        <h4 class="font-serif font-bold text-sm sm:text-base">100% Organic</h4>
+        <p class="text-[11px] sm:text-xs opacity-75">Fresh berries & farm cream</p>
+      </div>
+      <div class="space-y-1 sm:space-y-2">
+        <div class="text-2xl sm:text-3xl text-primary"><i class="fa-solid fa-truck-fast"></i></div>
+        <h4 class="font-serif font-bold text-sm sm:text-base">Chilled Delivery</h4>
+        <p class="text-[11px] sm:text-xs opacity-75">Arrives fresh and intact</p>
+      </div>
+      <div class="space-y-1 sm:space-y-2">
+        <div class="text-2xl sm:text-3xl text-primary"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <h4 class="font-serif font-bold text-sm sm:text-base">Custom Designs</h4>
+        <p class="text-[11px] sm:text-xs opacity-75">Tailored for your events</p>
+      </div>
+      <div class="space-y-1 sm:space-y-2">
+        <div class="text-2xl sm:text-3xl text-primary"><i class="fa-solid fa-heart"></i></div>
+        <h4 class="font-serif font-bold text-sm sm:text-base">Made with Love</h4>
+        <p class="text-[11px] sm:text-xs opacity-75">Pure artisanal joy</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cake Catalog Section (15 Cards) -->
+  <section id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+    <div class="text-center mb-8 sm:mb-12 space-y-2 sm:space-y-3">
+      <span class="opacity-70 text-xs font-bold uppercase tracking-widest">Sweet Delights</span>
+      <h2 class="font-serif text-2xl sm:text-4xl md:text-5xl font-bold">Our Gourmet Cake Collection</h2>
+      <div class="w-16 h-1 bg-primary mx-auto rounded-full"></div>
+    </div>
+
+    <!-- Controls (Search & Filter) -->
+    <div class="bg-card-bg p-3 sm:p-4 rounded-3xl border border-accent shadow-sm mb-8 sm:mb-12 flex flex-col md:flex-row justify-between gap-4 items-center">
+      <div class="relative w-full md:w-80">
+        <input type="text" id="search-input" placeholder="Search cakes by name or flavor..." class="w-full pl-10 pr-4 py-2.5 sm:py-3 border border-accent rounded-full bg-main text-xs focus:outline-none focus:ring-2 focus:ring-primary">
+        <i class="fa-solid fa-magnifying-glass absolute left-4 top-3 sm:top-3.5 text-xs opacity-50"></i>
+      </div>
+      
+      <div class="flex gap-1.5 sm:gap-2 flex-wrap justify-center w-full md:w-auto">
+        <button onclick="filterCategory('all')" class="filter-btn active-filter px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all">All</button>
+        <button onclick="filterCategory('chocolate')" class="filter-btn px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all">Chocolate</button>
+        <button onclick="filterCategory('fruity')" class="filter-btn px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all">Fruity</button>
+        <button onclick="filterCategory('wedding')" class="filter-btn px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all">Wedding</button>
+        <button onclick="filterCategory('cheesecake')" class="filter-btn px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all">Cheesecake</button>
+      </div>
+    </div>
+
+    <!-- 15 Cake Cards Grid -->
+    <div id="cake-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <!-- Injected by JavaScript -->
+    </div>
+  </section>
+
+  <!-- Custom Cake Studio Section -->
+  <section id="custom-studio" class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+    <div class="bg-accent-light/30 border border-accent rounded-[28px] sm:rounded-[36px] p-6 sm:p-10 md:p-12">
+      <div class="text-center mb-8 sm:mb-10 space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest opacity-70">Bespoke Design Studio</span>
+        <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold">Build & Customize Your Dream Cake</h2>
+        <div class="w-12 h-1 bg-primary mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 md:gap-10 items-center">
+        <!-- Studio Controls -->
+        <form class="space-y-4 sm:space-y-6" onsubmit="event.preventDefault();">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider mb-2">Base Sponge Flavor</label>
+            <select id="custom-flavor" onchange="calcCustomPrice()" class="w-full p-3.5 sm:p-4 border border-accent rounded-2xl bg-card-bg text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-primary">
+              <option value="42">Warm Chocolate Truffle ($42.00)</option>
+              <option value="38">Vanilla Bean Chiffon ($38.00)</option>
+              <option value="45">Red Velvet & Cream Cheese ($45.00)</option>
+              <option value="48">Pistachio Rose Blossom ($48.00)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider mb-2">Cake Size / Tier</label>
+            <select id="custom-size" onchange="calcCustomPrice()" class="w-full p-3.5 sm:p-4 border border-accent rounded-2xl bg-card-bg text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-primary">
+              <option value="1">1 Tier - 6 Inch (Serves 6-8)</option>
+              <option value="1.5">1 Tier - 8 Inch (Serves 10-12) [+$50%]</option>
+              <option value="2.2">2 Tiers - Grand Sovereign [+$120%]</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider mb-3">Add Luxury Toppings</label>
+            <div class="space-y-2.5 text-xs font-semibold">
+              <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox" value="6" class="custom-topping accent-primary" onchange="calcCustomPrice()"> Organic Wild Berries (+$6.00)</label>
+              <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox" value="12" class="custom-topping accent-primary" onchange="calcCustomPrice()"> Edible 24k Gold Leaf Accents (+$12.00)</label>
+              <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox" value="8" class="custom-topping accent-primary" onchange="calcCustomPrice()"> Handcrafted Sugar Flowers (+$8.00)</label>
+            </div>
+          </div>
+        </form>
+
+        <!-- Studio Display & Summary -->
+        <div class="bg-card-bg p-6 sm:p-8 rounded-3xl border border-accent shadow-lg flex flex-col justify-between space-y-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest opacity-70">Custom Estimate</span>
+            <div id="custom-total-display" class="font-serif text-4xl sm:text-5xl font-bold text-primary my-3 sm:my-4">$42.00</div>
+            <p class="text-xs opacity-75 leading-relaxed">
+              Includes signature ribbon packaging, custom candles, and a hand-written gift card.
+            </p>
+          </div>
+
+          <button onclick="addCustomCakeToCart()" class="w-full bg-primary text-white font-bold py-3.5 sm:py-4 rounded-2xl text-xs uppercase tracking-widest shadow-lg hover:opacity-90 transition-transform hover:-translate-y-0.5">
+            Add Custom Cake To Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Testimonials -->
+  <section id="reviews" class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+    <div class="text-center mb-8 sm:mb-12 space-y-2">
+      <span class="opacity-70 text-xs font-bold uppercase tracking-widest">Client Testimonials</span>
+      <h2 class="font-serif text-2xl sm:text-4xl font-bold">Loved By Dessert Enthusiasts</h2>
+      <div class="w-12 h-1 bg-primary mx-auto rounded-full"></div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-card-bg p-6 rounded-3xl border border-accent shadow-sm space-y-3">
+        <div class="text-amber-400 text-sm">★★★★★</div>
+        <p class="text-xs opacity-80 italic">"The Peach Strawberry Chiffon was the star of my sister's bridal shower! Not too sweet and super fresh."</p>
+        <div class="pt-2 font-serif font-bold text-xs">— Sophia M.</div>
+      </div>
+      <div class="bg-card-bg p-6 rounded-3xl border border-accent shadow-sm space-y-3">
+        <div class="text-amber-400 text-sm">★★★★★</div>
+        <p class="text-xs opacity-80 italic">"Ordering online was completely seamless. Delivery was right on time and the cake stayed in perfect shape."</p>
+        <div class="pt-2 font-serif font-bold text-xs">— Ayesha K.</div>
+      </div>
+      <div class="bg-card-bg p-6 rounded-3xl border border-accent shadow-sm space-y-3">
+        <div class="text-amber-400 text-sm">★★★★★</div>
+        <p class="text-xs opacity-80 italic">"Best Truffle Ganache in town. The cocoa texture and soft cream balance is pure perfection."</p>
+        <div class="pt-2 font-serif font-bold text-xs">— David L.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-auto bg-card-bg border-t-2 border-accent text-main">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
+      <div class="space-y-3 sm:space-y-4">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl sm:text-3xl">🍰</span>
+          <span class="font-serif text-xl sm:text-2xl font-bold">Blossom & Whisk</span>
+        </div>
+        <p class="text-xs opacity-75 leading-relaxed">
+          Artisanal cake boutique specializing in soft aesthetic designs, organic ingredients, and home deliveries.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="font-serif text-base sm:text-lg font-bold">Quick Links</h4>
+        <ul class="space-y-2 text-xs opacity-80">
+          <li><a href="#hero" class="hover:text-primary transition-colors">Home</a></li>
+          <li><a href="#catalog" class="hover:text-primary transition-colors">Our Menu</a></li>
+          <li><a href="#custom-studio" class="hover:text-primary transition-colors">Custom Atelier</a></li>
+          <li><a href="#reviews" class="hover:text-primary transition-colors">Testimonials</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="font-serif text-base sm:text-lg font-bold">Bakery Hours</h4>
+        <ul class="space-y-2 text-xs opacity-80">
+          <li>Mon - Fri: <span class="font-bold">9:00 AM - 9:00 PM</span></li>
+          <li>Sat - Sun: <span class="font-bold">10:00 AM - 10:00 PM</span></li>
+          <li class="pt-2 text-primary font-bold">✨ Online Store: 24/7 Open</li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="font-serif text-base sm:text-lg font-bold">Contact Us</h4>
+        <p class="text-xs opacity-80 leading-relaxed">
+          📍 124 Rosewood Avenue, Pastry District<br>
+          📞 Phone: +1 (555) 123-4567<br>
+          ✉️ Email: hello@blossomandwhisk.com
+        </p>
+      </div>
+    </div>
+
+    <div class="border-t border-accent/40 py-5 text-center text-xs opacity-60 px-4">
+      © 2026 Blossom & Whisk Boutique. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Slide-out Cart Drawer -->
+  <div id="cart-drawer" class="fixed inset-y-0 right-0 w-full sm:w-96 bg-card-bg text-main z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col justify-between p-5 sm:p-6 border-l border-accent">
+    <div>
+      <div class="flex items-center justify-between pb-4 border-b border-accent">
+        <h2 class="font-serif text-lg sm:text-xl font-bold flex items-center gap-2">
+          <i class="fa-solid fa-basket-shopping text-primary"></i> Your Cart
+        </h2>
+        <button id="cart-close-btn" class="text-lg opacity-60 hover:opacity-100 p-2">✕</button>
+      </div>
+      <div id="cart-items-container" class="mt-4 sm:mt-6 space-y-3 sm:space-y-4 max-h-[45vh] sm:max-h-[50vh] overflow-y-auto">
+        <!-- Cart Items Injected Here -->
+      </div>
+    </div>
+
+    <div class="border-t border-accent pt-4 sm:pt-6 space-y-3 sm:space-y-4">
+      <div class="flex justify-between items-center">
+        <span class="text-xs font-bold uppercase tracking-widest opacity-70">Total Amount:</span>
+        <span id="cart-total-price" class="font-serif text-xl sm:text-2xl font-bold text-primary">$0.00</span>
+      </div>
+
+      <!-- Customer Checkout Inputs -->
+      <div class="space-y-2">
+        <input type="text" id="cust-name" placeholder="Your Full Name" class="w-full p-2.5 border border-accent rounded-xl text-xs bg-main focus:outline-none focus:ring-1 focus:ring-primary">
+        <textarea id="cust-address" placeholder="Delivery Address" class="w-full p-2.5 border border-accent rounded-xl text-xs bg-main focus:outline-none focus:ring-1 focus:ring-primary" rows="2"></textarea>
+      </div>
+
+      <button onclick="checkoutOrder()" class="w-full bg-primary hover:opacity-90 text-white font-bold py-3.5 rounded-xl text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-lg transition-transform hover:-translate-y-0.5">
+        <i class="fa-solid fa-check text-lg"></i> Order Now
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
